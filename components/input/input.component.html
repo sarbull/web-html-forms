@@ -1,0 +1,21 @@
+<template id="whf-input">
+  <label for="id"></label>
+  <input id="id" type="" value="" name="" />
+</template>
+
+<script>
+  customElements.define('whf-input',
+    class extends HTMLElement {
+      constructor() {
+        super();
+
+        const template = document.getElementById('whf-input');
+        const templateContent = template.content;
+
+        this.attachShadow({mode: 'open'}).appendChild(
+          templateContent.cloneNode(true)
+        );
+      }
+    }
+  );
+</script>
